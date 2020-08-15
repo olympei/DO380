@@ -1,15 +1,15 @@
-apiVersion: CHANGE_ME
+apiVersion: batch/v1beta1
 kind: CronJob
 metadata:
   name: audit-cron
   namespace: automation-scripts
 spec:
-  schedule: CHANGE_ME
+  schedule: "*/2 * * * *"
   jobTemplate:
     spec:
       template:
         spec:
-          serviceAccountName: CHANGE_ME
+          serviceAccountName: auditor
           restartPolicy: Never
           containers:
           - name: audit-sh
