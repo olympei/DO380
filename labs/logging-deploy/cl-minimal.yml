@@ -14,7 +14,7 @@ spec:
       storage:
         storageClassName: "local-ssd-fs"
         size: 20G
-      redundancyPolicy: CHANGE_ME
+      redundancyPolicy: "MultipleRedundancy"
       resources:
         limits:
           memory: "8Gi"
@@ -32,7 +32,7 @@ spec:
     curator:
       nodeSelector:
           node-role.kubernetes.io/infra: ''
-      schedule: CHANGE_ME
+      schedule: "20 2 * * *"
   collection:
     logs:
       type: "fluentd"
