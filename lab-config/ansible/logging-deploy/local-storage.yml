@@ -1,3 +1,16 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: storage-local
+---
+apiVersion: operators.coreos.com/v1alpha2
+kind: OperatorGroup
+metadata:
+  name: local-operator-group
+  namespace: storage-local
+spec:
+  targetNamespaces:
+    - storage-local
 ---
 apiVersion: operators.coreos.com/v1alpha1
 kind: Subscription
